@@ -1,291 +1,560 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kodadala Trading Company</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: #f7f3ea;
-            color: #333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 40px;
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-        }
+<title>Kodadala Trading Company</title>
 
-        .logo img {
-            height: 80px;
-        }
+<style>
 
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-        }
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
 
-        .hero {
-            padding: 60px 40px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 30px;
-            background: linear-gradient(90deg, #f48120 0%, #f7a62b 100%);
-        }
+html{
+scroll-behavior:smooth;
+}
 
-        .hero h1 {
-            font-size: 48px;
-            line-height: 1.2;
-        }
+body{
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+color:#111;
+line-height:1.6;
+background:white;
+padding-top:80px;
+}
 
-        .hero h1 .company {
-            font-weight: bold;
-            color: black;
-            /* Black company name */
-        }
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
 
-        .hero span {
-            color: white;
-        }
+/* NAVBAR */
 
-        .hero p {
-            font-size: 18px;
-            margin-top: 20px;
-            line-height: 1.6;
-        }
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:white;
+border-bottom:1px solid #eee;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+transition:top 0.3s;
+backdrop-filter: blur(10px);
+}
 
-        .button {
-            margin-top: 30px;
-            display: inline-block;
-            padding: 14px 26px;
-            background: white;
-            color: #f48120;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-        }
+.logo{
+font-weight:700;
+font-size:20px;
+text-decoration:none;
+color:black;
+}
 
-        .section {
-            padding: 40px 40px;
-        }
+.nav-links a{
+margin-left:30px;
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
+.nav-links a:hover{
+color:#f48120;
+}
 
-        .card {
-            position: relative;
-            color: white;
-            padding: 25px;
-            border-radius: 10px;
-            overflow: hidden;
-            min-height: 220px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-            background-size: cover;
-            background-position: center;
-        }
+/* INTRO */
 
-        .card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.45);
-            /* dark overlay to make text readable */
-            z-index: 0;
-            border-radius: 10px;
-        }
+.company-introduction{
+background:linear-gradient(135deg,#f48120,#ff9a2f);
+padding:120px 0;
+}
 
-        .card h3,
-        .card p {
-            position: relative;
-            z-index: 1;
-            margin: 0;
-        }
+.intro-grid{
+display:grid;
+grid-template-columns:1.3fr .7fr;
+align-items:center;
+gap:50px;
+}
 
-        .card p {
-            margin-top: 8px;
-            font-size: 15px;
-            line-height: 1.4;
-        }
+.company-name{
+font-size:48px;
+font-weight:700;
+color:black;
+}
 
-        /* Specific backgrounds for products */
-        /*
-        .card.turmeric {
-            background-image: url('https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=800&q=80');
-        }
+.hero-title{
+font-size:38px;
+font-weight:600;
+margin-top:10px;
+}
 
-        .card.redchilli {
-            background-image: url('https://images.unsplash.com/photo-1601984737682-7b4c5242cd13?auto=format&fit=crop&w=800&q=80');
-        }
+.company-description{
+margin-top:20px;
+font-size:18px;
+max-width:650px;
+}
 
-        .card.cumin {
-            background-image: url('https://images.unsplash.com/photo-1601004890683-ecd12de2d6b8?auto=format&fit=crop&w=800&q=80');
-        }
+.primary-button{
+display:inline-block;
+margin-top:25px;
+background:black;
+color:white;
+padding:14px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+}
 
-        .card.jaggery {
-            background-image: url('https://images.unsplash.com/photo-1626330649280-3b9cdd3a36aa?auto=format&fit=crop&w=800&q=80');
-        }
+.intro-image{
+display:flex;
+justify-content:flex-end;
+}
 
-        .card.other {
-            background-image: url('https://images.unsplash.com/photo-1599737551073-66f163d96f70?auto=format&fit=crop&w=800&q=80');
-        }
-        */
+.intro-image img{
+width:100%;
+max-width:600px;
+border-radius:14px;
+}
 
-        footer {
-            padding: 40px 40px;
-            background: #1a1a1a;
-            color: white;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 30px;
-        }
+/* PRODUCTS */
 
-        footer h4 {
-            margin-bottom: 15px;
-            color: #f48120;
-        }
+.products-section{
+padding:80px 0;
+}
 
-        footer a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 8px;
-        }
+.products-grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:18px;
+margin-top:30px;
+}
 
-        footer p {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #ccc;
-        }
+.product-card img{
+width:100%;
+height:160px;
+object-fit:cover;
+}
 
-        .social-icons img {
-            height: 30px;
-            margin-right: 10px;
-        }
+.product-card{
+border:1px solid #eee;
+border-radius:10px;
+overflow:hidden;
+background:white;
+box-shadow:0 6px 18px rgba(0,0,0,0.06);
+display:flex;
+flex-direction:column;
+height:100%;
+transition:all 0.25s ease;
+}
 
-        /* Responsive adjustments */
-        @media(max-width:900px) {
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
 
-            .hero img {
-                margin-top: 30px;
-            }
+.product-card:hover{
+transform:translateY(-6px);
+box-shadow:0 16px 30px rgba(0,0,0,0.12);
+}
 
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+.product-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
 
-            nav {
-                margin-top: 10px;
-            }
+.product-content{
+padding:18px;
+background:#f5f1ea;
+flex-grow:1;
+margin-bottom:6px;
+}
 
-            footer {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+.product-content h3{
+margin-bottom:6px;
+}
+
+.product-content p{
+font-size:14px;
+}
+
+/* HOW KODADALA HELPS */
+
+.help-section{
+margin-top:80px;
+padding:120px 0 150px 0;
+background:linear-gradient(135deg,#f48120,#f7a43a);
+border-bottom-left-radius:50% 120px;
+border-bottom-right-radius:50% 120px;
+}
+
+.help-title{
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+}
+
+.help-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+max-width:1100px;
+margin:auto;
+}
+
+.help-card{
+background:#f9f5ef;
+padding:30px;
+border-radius:10px;
+box-shadow:0 6px 15px rgba(0,0,0,0.08);
+text-align:center;
+font-weight:500;
+}
+
+/* EXPORT CAPABILITIES */
+
+.export-capabilities{
+padding:80px 0;
+}
+
+.capabilities-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+margin-top:30px;
+}
+
+.capability-box{
+padding:25px;
+background:white;
+border-radius:10px;
+border:1px solid #eee;
+}
+
+/* FOOTER */
+
+.footer{
+background:#02002a;
+color:white;
+padding:80px 60px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:40px;
+max-width:1200px;
+margin:auto;
+}
+
+.footer h4{
+margin-bottom:15px;
+font-size:16px;
+}
+
+.footer a{
+display:block;
+color:#ddd;
+text-decoration:none;
+margin-bottom:8px;
+font-size:14px;
+}
+
+.footer-bottom{
+margin-top:60px;
+border-top:1px solid rgba(255,255,255,0.2);
+padding-top:20px;
+text-align:center;
+font-size:14px;
+color:#bbb;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.intro-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:40px;
+}
+
+.company-name{
+font-size:36px;
+}
+
+.hero-title{
+font-size:28px;
+}
+
+.footer-grid{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+section{
+scroll-margin-top:80px;
+}
+
+
+
+</style>
 </head>
 
-<body>
-    <header>
-        <div class="logo"><img
-                src="https://res.cloudinary.com/moxiedb/image/upload/v1772861800/kodadala_logo_fzsmsu.png"
-                alt="Kodadala Trading Company" /></div>
-        <nav><a href="#about">About</a><a href="#products">Products</a><a href="#trade">Global Trade</a><a
-                href="#contact">Contact</a></nav>
-    </header>
-    <section class="hero">
-        <div>
-            <h1><span class="company">Kodadala Trading Company</span> Global Exporters of Indian Spices
-            </h1>
-            <p>Kodadala Trading Company specializes in exporting high-quality Indian spices and agricultural products
-                including turmeric, cumin, red chili, jaggery, and more. We connect trusted farmers with international
-                markets, ensuring premium quality and reliable delivery.</p>
-            <p>Our goal is to build lasting partnerships globally, providing consistent quality, competitive pricing,
-                and transparent trade practices.</p><a class="button" href="#products">Explore Products</a>
-        </div>
-        <div><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80"
-                style="width:100%; border-radius:12px;"></div>
-    </section>
-    <section class="section" id="products">
-        <h2>Our Products</h2>
-        <div class="cards">
-            <div class="card turmeric">
-                <h3>Turmeric</h3>
-                <p>Premium Indian turmeric sourced from trusted farms and processed for export grade quality.</p>
-            </div>
-            <div class="card redchilli">
-                <h3>Red Chilli</h3>
-                <p>High quality dried chillies with strong color, flavor and international export standards.</p>
-            </div>
-            <div class="card cumin">
-                <h3>Cumin Seeds</h3>
-                <p>Carefully selected cumin seeds known for their aroma and purity in global spice markets.</p>
-            </div>
-            <div class="card jaggery">
-                <h3>Jaggery</h3>
-                <p>Natural traditional sweetener produced from sugarcane with rich taste and purity.</p>
-            </div>
-            <div class="card other">
-                <h3>Other Agricultural Products</h3>
-                <p>We also supply additional agricultural commodities based on buyer requirements.</p>
-            </div>
-        </div>
-    </section>
-    <section class="section" id="trade">
-        <h2>Global Trade</h2>
-        <p>Kodadala Trading Company builds strong relationships with international buyers, importers, and distributors.
-            We focus on reliable sourcing, quality inspection, and seamless export logistics to ensure our partners
-            receive the finest products from India.</p>
-        <p>Our long-term vision is to become a trusted export partner for spices and agricultural products worldwide.
-        </p>
-    </section>
-    <section class="section" id="contact">
-        <h2>Contact</h2>
-        <p>For business inquiries, partnerships, and international trade opportunities, please reach out to us at
-            <strong>kodadala.praveen@gmail.com</strong>. We will respond promptly to assist you.</p>
-    </section>
-    <footer>
-        <div>
-            <h4>Kodadala Trading Company</h4>
-            <p><strong>Kodadala Trading Company</strong> connects Indian farmers with global markets through trusted
-                spice and agricultural exports. High-quality products with transparent trade practices.</p>
-        </div>
-        <div>
-            <h4>Quick Links</h4><a href="#products">Products</a><a href="#trade">Global Trade</a><a
-                href="#contact">Contact</a>
-        </div>
-        <div>
-            <h4>Contact</h4>
-            <p>Email: kodadala.praveen@gmail.com</p>
-            <div class="social-icons">
-                <!-- <img src="/mnt/data/15130d3f-534c-4d05-9525-46798ed3e792.png" alt="Facebook">
-                <img src="/mnt/data/b63053ab-bfa5-4a01-aba6-6998414c53e9.png" alt="LinkedIn"> -->
-            </div>
-            <p>© 2026 Kodadala Trading Company. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
 
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<a href="#" class="logo">KODADALA</a>
+
+<nav class="nav-links">
+<a href="#about">About</a>
+<a href="#products">Products</a>
+<a href="#export">Exports</a>
+<a href="#footer">Contact</a>
+</nav>
+
+</header>
+
+
+
+<!-- INTRO -->
+
+<section class="company-introduction" id="about">
+
+<div class="container intro-grid">
+
+<div>
+
+<h1 class="company-name">Kodadala Trading Company</h1>
+
+<h2 class="hero-title">
+Premium Indian Spices for Global Markets
+</h2>
+
+<p class="company-description">
+Kodadala Trading Company exports high-quality Indian spices and agricultural commodities to international buyers. 
+We connect trusted farms with global importers through reliable sourcing and professional export logistics.
+</p>
+
+<a class="primary-button" href="#products">View Products</a>
+
+<p style="margin-top:15px;font-size:14px;">
+Supplying premium Indian spices to international distributors and food companies.
+</p>
+
+</div>
+
+<div class="intro-image">
+<img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=80">
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PRODUCTS -->
+
+<section class="products-section" id="products">
+
+<div class="container">
+
+<h2>Export Products</h2>
+
+<div class="products-grid">
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1615486362923-7c6b7f2f2b90">
+<div class="product-content">
+<h3>Turmeric</h3>
+<p>Premium export quality turmeric sourced from trusted Indian farms.</p>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1601984737682-7b4c5242cd13">
+<div class="product-content">
+<h3>Red Chilli</h3>
+<p>High quality dried red chilli suitable for international spice markets.</p>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1601004890683-ecd12de2d6b8">
+<div class="product-content">
+<h3>Cumin Seeds</h3>
+<p>Carefully selected cumin seeds known for their aroma and purity.</p>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1626330649280-3b9cdd3a36aa">
+<div class="product-content">
+<h3>Jaggery</h3>
+<p>Natural sugarcane jaggery produced using traditional methods.</p>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655">
+<div class="product-content">
+<h3>Other Agricultural Products</h3>
+<p>We also supply additional agricultural commodities based on buyer requirements.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- HOW KODADALA HELPS -->
+
+<section class="help-section">
+
+<h2 class="help-title">How Kodadala Helps Buyers</h2>
+
+<div class="help-grid">
+
+<div class="help-card">Direct sourcing from trusted farmers</div>
+<div class="help-card">Strict quality inspection</div>
+<div class="help-card">Export documentation support</div>
+<div class="help-card">Reliable global shipping logistics</div>
+<div class="help-card">Consistent bulk supply</div>
+<div class="help-card">Competitive export pricing</div>
+
+</div>
+
+</section>
+
+
+
+<!-- EXPORT CAPABILITIES -->
+
+<section class="export-capabilities" id="export">
+
+<div class="container">
+
+<h2>Export Capabilities</h2>
+
+<div class="capabilities-grid">
+
+<div class="capability-box">
+<h3>Bulk Supply</h3>
+<p>Reliable supply for distributors and wholesale buyers.</p>
+</div>
+
+<div class="capability-box">
+<h3>Packaging Options</h3>
+<p>25kg and 50kg export packaging with private labeling options.</p>
+</div>
+
+<div class="capability-box">
+<h3>Quality Compliance</h3>
+<p>Products prepared according to international food safety standards.</p>
+</div>
+
+<div class="capability-box">
+<h3>Container Shipments</h3>
+<p>Full container and consolidated shipments worldwide.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer" id="footer">
+
+<div class="footer-grid">
+
+<div>
+<h4>Products</h4>
+<a>Turmeric</a>
+<a>Red Chilli</a>
+<a>Cumin Seeds</a>
+<a>Jaggery</a>
+<a>Other Agricultural Products</a>
+</div>
+
+<div>
+<h4>Export Services</h4>
+<a>Bulk Supply</a>
+<a>Export Packaging</a>
+<a>Quality Inspection</a>
+<a>Global Shipping</a>
+</div>
+
+<div>
+<h4>Company</h4>
+<a>About Kodadala</a>
+<a>Export Capabilities</a>
+<a>Global Trade</a>
+</div>
+
+<div>
+<h4>Contact</h4>
+<a href="mailto:sales@kodadala.com">sales@kodadala.com</a>
+<a href="mailto:info@kodadala.com">info@kodadala.com</a>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 Kodadala Trading Company
+
+</div>
+
+</footer>
+
+<script>
+
+let lastScroll = 0;
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+
+let currentScroll = window.pageYOffset;
+
+if(currentScroll <= 0){
+navbar.style.top = "0";
+return;
+}
+
+if(currentScroll > lastScroll){
+navbar.style.top = "-90px"; 
+}
+else{
+navbar.style.top = "0";
+}
+
+lastScroll = currentScroll;
+
+});
+
+</script>
+
+</body>
 </html>
+
