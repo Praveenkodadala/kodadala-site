@@ -22,7 +22,6 @@ scroll-behavior:smooth;
 body{
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
 color:#111;
-line-height:1.6;
 background:white;
 padding-top:80px;
 }
@@ -48,7 +47,6 @@ left:0;
 width:100%;
 z-index:1000;
 box-shadow:0 2px 10px rgba(0,0,0,0.05);
-transition:top 0.3s;
 }
 
 .logo{
@@ -56,6 +54,11 @@ font-weight:700;
 font-size:20px;
 text-decoration:none;
 color:black;
+}
+
+.nav-links{
+display:flex;
+align-items:center;
 }
 
 .nav-links a{
@@ -94,6 +97,11 @@ font-size:36px;
 margin-top:10px;
 }
 
+.hero-subtext{
+margin-top:15px;
+font-size:14px;
+}
+
 .company-description{
 margin-top:20px;
 font-size:18px;
@@ -110,8 +118,13 @@ text-decoration:none;
 font-weight:600;
 }
 
+.primary-button:hover{
+background:#222;
+}
+
 .intro-image img{
 width:100%;
+height:auto;
 max-width:720px;
 border-radius:14px;
 }
@@ -233,6 +246,8 @@ font-size:14px;
 color:#bbb;
 }
 
+
+
 /* MOBILE */
 
 @media(max-width:900px){
@@ -275,7 +290,6 @@ margin-left:15px;
 <nav class="nav-links">
 <a href="#about">About</a>
 <a href="#products">Products</a>
-<a href="#export">Exports</a>
 <a href="#footer">Contact</a>
 </nav>
 </header>
@@ -299,14 +313,14 @@ We connect trusted farms with global importers through reliable sourcing and pro
 
 <a class="primary-button" href="#products">View Products</a>
 
-<p style="margin-top:15px;font-size:14px;">
+<p class="hero-subtext">
 Supplying premium Indian spices to international distributors and food companies.
 </p>
 
 </div>
 
 <div class="intro-image">
-<img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1400&q=80">
+<img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1400&q=80" alt="Indian spices export products">
 </div>
 
 </div>
@@ -323,7 +337,7 @@ Supplying premium Indian spices to international distributors and food companies
 <div class="products-grid">
 
 <div class="product-card">
-<img src="assets/products/turmeric_powder.png">
+<img src="assets/products/turmeric_powder.png" alt="Turmeric Powder">
 <div class="product-content">
 <h3>Turmeric</h3>
 <p>Premium export quality turmeric sourced from trusted Indian farms.</p>
@@ -331,7 +345,7 @@ Supplying premium Indian spices to international distributors and food companies
 </div>
 
 <div class="product-card">
-<img src="assets/products/red_chilli.png">
+<img src="assets/products/red_chilli.png" alt="Red Chilli">
 <div class="product-content">
 <h3>Red Chilli</h3>
 <p>High quality dried red chilli suitable for international spice markets.</p>
@@ -339,7 +353,7 @@ Supplying premium Indian spices to international distributors and food companies
 </div>
 
 <div class="product-card">
-<img src="assets/products/cumin_seeds.png">
+<img src="assets/products/cumin_seeds.png" alt="Cumin seeds">
 <div class="product-content">
 <h3>Cumin Seeds</h3>
 <p>Carefully selected cumin seeds known for their aroma and purity.</p>
@@ -347,7 +361,7 @@ Supplying premium Indian spices to international distributors and food companies
 </div>
 
 <div class="product-card">
-<img src="assets/products/jaggery_powder.png">
+<img src="assets/products/jaggery_powder.png" alt="Jaggery Powder">
 <div class="product-content">
 <h3>Jaggery</h3>
 <p>Natural sugarcane jaggery produced using traditional methods.</p>
@@ -355,7 +369,7 @@ Supplying premium Indian spices to international distributors and food companies
 </div>
 
 <div class="product-card">
-<img src="assets/products/rice_basmati.png">
+<img src="assets/products/rice_basmati.png" alt="Rice">
 <div class="product-content">
 <h3>Rice</h3>
 <p>High quality Indian rice suitable for bulk international food distribution.</p>
@@ -363,7 +377,7 @@ Supplying premium Indian spices to international distributors and food companies
 </div>
 
 <div class="product-card">
-<img src="assets/products/coriander_seeds.png">
+<img src="assets/products/coriander_seeds.png" alt="Coriander Seeds">
 <div class="product-content">
 <h3>Coriander Seeds</h3>
 <p>Cleaned and graded coriander seeds widely used in global spice markets.</p>
@@ -371,7 +385,7 @@ Supplying premium Indian spices to international distributors and food companies
 </div>
 
 <div class="product-card">
-<img src="assets/products/fenugreek_seeds.png">
+<img src="assets/products/fenugreek_seeds.png" alt="Fenugreek Seeds">
 <div class="product-content">
 <h3>Fenugreek Seeds</h3>
 <p>Premium fenugreek seeds known for strong flavor and export quality purity.</p>
@@ -381,7 +395,7 @@ Supplying premium Indian spices to international distributors and food companies
 
 
 <div class="product-card">
-<img src="assets/products/agricultural_products.png">
+<img src="assets/products/agricultural_products.png" alt="Other">
 <div class="product-content">
 <h3>Agricultural Products</h3>
 <p>Additional agricultural commodities based on buyer requirements.</p>
@@ -461,7 +475,7 @@ Supplying premium Indian spices to international distributors and food companies
 <a>Red Chilli</a>
 <a>Cumin Seeds</a>
 <a>Jaggery</a>
-<a> Other Agricultural Products</a>
+<a>Other Agricultural Products</a>
 </div>
 
 <div>
@@ -475,13 +489,16 @@ Supplying premium Indian spices to international distributors and food companies
 <h4>Company</h4>
 <a href="#about">About</a>
 <a href="#products">Products</a>
-<a href="#export">Exports</a>
 </div>
 
 <div>
 <h4>Contact</h4>
 <a href="mailto:sales@kodadala.com">sales@kodadala.com</a>
 <a href="mailto:info@kodadala.com">info@kodadala.com</a>
+
+<a href="https://wa.me/919618586434" target="_blank">
+WhatsApp: +91 9618586434
+</a>
 
 <a style="margin-top:15px;">
 Kodadala Trading Company<br>
